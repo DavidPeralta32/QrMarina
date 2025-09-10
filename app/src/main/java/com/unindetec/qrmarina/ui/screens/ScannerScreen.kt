@@ -15,6 +15,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -64,7 +65,15 @@ fun ScannerScreen(navController: NavController) {
     }
 
     Scaffold(
-        topBar = { TopAppBar(title = { Text("Escáner QR") }) },
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(
+                        text = "Escáner QR"
+                    )
+                }
+            )
+        },
         content = { paddingValues ->
             // Aplicamos fillMaxSize y respetamos el padding del Scaffold
             Column(
@@ -79,6 +88,7 @@ fun ScannerScreen(navController: NavController) {
                         modifier = Modifier
                             .padding(horizontal = 16.dp, vertical = 4.dp)
                             .fillMaxWidth()
+
                     )
                     Text(text = "Correo: ${usuario!!.email}",
                         modifier = Modifier
