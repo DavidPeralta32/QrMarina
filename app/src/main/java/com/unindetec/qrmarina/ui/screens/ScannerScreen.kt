@@ -8,9 +8,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanOptions
 
@@ -37,7 +39,7 @@ fun ScannerScreen(navController: NavController) {
         options.setBarcodeImageEnabled(true)
         launcher.launch(options)
     }
-//datos nuevos
+
     Scaffold(
         topBar = { TopAppBar(title = { Text("Escáner QR") }) },
         content = {
@@ -54,4 +56,15 @@ fun ScannerScreen(navController: NavController) {
             }
         }
     )
+}
+
+
+
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewScannerScreen(){
+    val navController = rememberNavController() // controlador de navegación de prueba
+    ScannerScreen(navController = navController)
+
 }
