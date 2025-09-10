@@ -37,7 +37,7 @@ fun ScannerScreen(navController: NavController) {
         options.setBarcodeImageEnabled(true)
         launcher.launch(options)
     }
-
+//datos nuevos
     Scaffold(
         topBar = { TopAppBar(title = { Text("Escáner QR") }) },
         content = {
