@@ -84,9 +84,10 @@ fun decryptToUsuario(encryptedBase64: String): Usuario? {
         val decryptedString = decryptCryptoJsAesBase64(encryptedBase64)
         val usuarioJson = Gson().fromJson(decryptedString, Usuario::class.java)
         Usuario(
+            grado = usuarioJson.grado,
             nombre = usuarioJson.nombre,
-            email = usuarioJson.email,
-            telefono = usuarioJson.telefono
+            fechaVigencia = usuarioJson.fechaVigencia,
+            placas = usuarioJson.placas
         )
     } catch (e: Exception) {
         e.printStackTrace()

@@ -1,7 +1,8 @@
 package com.unindetec.qrmarina.model
 
 data class Usuario (
+    val grado: String,
     val nombre: String,
-    val email: String,
-    val telefono: String
+    val fechaVigencia: String,
+    val placas: String
 )

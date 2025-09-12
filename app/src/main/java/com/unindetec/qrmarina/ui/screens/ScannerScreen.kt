@@ -84,18 +84,25 @@ fun ScannerScreen(navController: NavController) {
 
                 if (usuario != null) {
                     Text(
+                        text = "Grado: ${usuario!!.grado}",
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp, vertical = 4.dp)
+                            .fillMaxWidth()
+
+                    )
+                    Text(
                         text = "Nombre: ${usuario!!.nombre}",
                         modifier = Modifier
                             .padding(horizontal = 16.dp, vertical = 4.dp)
                             .fillMaxWidth()
 
                     )
-                    Text(text = "Correo: ${usuario!!.email}",
+                    Text(text = "Fecha vigencia: ${usuario!!.fechaVigencia}",
                         modifier = Modifier
                             .padding(horizontal = 16.dp, vertical = 4.dp)
                             .fillMaxWidth()
                     )
-                    Text(text = "Teléfono: ${usuario!!.telefono}",
+                    Text(text = "Placas: ${usuario!!.placas}",
                         modifier = Modifier
                         .padding(horizontal = 16.dp, vertical = 4.dp)
                         .fillMaxWidth()
