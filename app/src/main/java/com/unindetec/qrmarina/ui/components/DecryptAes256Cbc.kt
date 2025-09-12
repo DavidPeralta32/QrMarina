@@ -79,7 +79,6 @@ fun decryptCryptoJsAesBase64(encryptedBase64: String): String {
 
 
 fun decryptToUsuario(encryptedBase64: String): Usuario? {
-
     return try {
         val decryptedString = decryptCryptoJsAesBase64(encryptedBase64)
         val usuarioJson = Gson().fromJson(decryptedString, Usuario::class.java)

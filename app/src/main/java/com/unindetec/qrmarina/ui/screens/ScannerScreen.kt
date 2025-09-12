@@ -83,30 +83,7 @@ fun ScannerScreen(navController: NavController) {
             ) {
 
                 if (usuario != null) {
-                    Text(
-                        text = "Grado: ${usuario!!.grado}",
-                        modifier = Modifier
-                            .padding(horizontal = 16.dp, vertical = 4.dp)
-                            .fillMaxWidth()
-
-                    )
-                    Text(
-                        text = "Nombre: ${usuario!!.nombre}",
-                        modifier = Modifier
-                            .padding(horizontal = 16.dp, vertical = 4.dp)
-                            .fillMaxWidth()
-
-                    )
-                    Text(text = "Fecha vigencia: ${usuario!!.fechaVigencia}",
-                        modifier = Modifier
-                            .padding(horizontal = 16.dp, vertical = 4.dp)
-                            .fillMaxWidth()
-                    )
-                    Text(text = "Placas: ${usuario!!.placas}",
-                        modifier = Modifier
-                        .padding(horizontal = 16.dp, vertical = 4.dp)
-                        .fillMaxWidth()
-                    )
+                    MostrarDatosObtenidos(usuario!!)
                 } else if (qrResult != null) {
                     Text(text = "Descifrando...", modifier = Modifier.fillMaxWidth())
                 } else {
@@ -122,7 +99,33 @@ fun ScannerScreen(navController: NavController) {
     )
 }
 
+@Composable
+fun MostrarDatosObtenidos(usuario: Usuario){
+    Text(
+        text = "Grado: ${usuario.grado}",
+        modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 4.dp)
+            .fillMaxWidth()
 
+    )
+    Text(
+        text = "Nombre: ${usuario.nombre}",
+        modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 4.dp)
+            .fillMaxWidth()
+
+    )
+    Text(text = "Fecha vigencia: ${usuario.fechaVigencia}",
+        modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 4.dp)
+            .fillMaxWidth()
+    )
+    Text(text = "Placas: ${usuario.placas}",
+        modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 4.dp)
+            .fillMaxWidth()
+    )
+}
 
 
 @Preview(showBackground = true)
